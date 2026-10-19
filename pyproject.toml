@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finance-reconciliation"
+version = "0.1.0"
+description = "Reconcile warehouse extracts against Finance data"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1,<4"]
+warehouse = ["SQLAlchemy>=2,<3"]
+oracle = ["SQLAlchemy>=2,<3", "oracledb>=2,<4"]
+mysql = ["SQLAlchemy>=2,<3", "PyMySQL>=1.1,<2"]
+
+[project.scripts]
+reconcile = "reconciliation.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["reconciliation*"]
