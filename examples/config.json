@@ -1,0 +1,10 @@
+{
+  "warehouse": {"type": "csv", "path": "warehouse.csv"},
+  "finance": {
+    "type": "csv", "path": "finance.csv",
+    "columns": {"invoice_id": "invoice", "currency": "currency", "amount": "total"}
+  },
+  "keys": ["invoice_id", "currency"],
+  "amounts": ["amount"],
+  "tolerances": {"amount": "0.01"}
+}

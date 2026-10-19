@@ -1,0 +1,14 @@
+{
+  "warehouse": {
+    "type": "mysql",
+    "query": "SELECT invoice_id, currency, amount FROM finance_invoice_extract WHERE accounting_date >= :period_start AND accounting_date < :period_end",
+    "parameters": {"period_start": "2026-09-01", "period_end": "2026-10-01"}
+  },
+  "finance": {
+    "type": "csv", "path": "finance.csv",
+    "columns": {"invoice_id": "invoice", "currency": "currency", "amount": "total"}
+  },
+  "keys": ["invoice_id", "currency"],
+  "amounts": ["amount"],
+  "tolerances": {"amount": "0.01"}
+}

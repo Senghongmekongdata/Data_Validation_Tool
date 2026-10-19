@@ -1,0 +1,4 @@
+invoice_id,currency,amount
+INV001,USD,100.00
+INV002,USD,250.00
+INV003,USD,75.00
